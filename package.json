@@ -10,6 +10,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-eventbridge": "^3.338.0",
+    "@aws-sdk/client-lambda": "^3.338.0",
+    "aws-sdk": "^2.1384.0",
+    "esm": "^3.2.25",
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "prettier": "2.8.8"
   }
 }

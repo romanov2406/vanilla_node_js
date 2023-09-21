@@ -1,17 +1,12 @@
-const express = require('express')
-const app = express()
+const express = require("express");
 
-app.get('/',  (req, res) => {
-  res.send('Hello World');
-})
+const aws = require("aws-sdk");
 
-app.get('/test',  (req, res) => {
-    res.send('Hello test');
-  })
+const app = express();
+let count = 0;
 
-  app.get('/get',  (req, res) => {
-    res.send('Hello test');
-  })
-  
+app.get("/", async (req, res) => {
+  res.send("Hello World " + ++count);
+});
 
 app.listen(3000);
