@@ -23,7 +23,7 @@ jobs:
         id: deploy
         run: |
           aws deploy create-deployment \
-          --application-name vanilla_node_js \
-          --deployment-group-name nodejs-express-app-cd1 \
+          --application-name rndk24-cicd-app \
+          --deployment-group-name rndk24-cicd-app-deployment-group \
           --deployment-config-name CodeDeployDefault.OneAtATime \
           --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
