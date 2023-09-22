@@ -3,6 +3,8 @@ os: linux
 files:
   - source: /
     destination: /var/www/vanilla_node_js
+    overwrite: true
+    file_exists_behavior: OVERWRITE
 hooks:
   # ApplicationStop:
   # DownloadBundle:
