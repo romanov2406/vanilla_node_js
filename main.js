@@ -4,7 +4,7 @@ const app = express();
 let count = 0;
 
 app.get("/", async (req, res) => {
-  res.send("RNDK24 TEST SERVER ::::::: " + ++count +  '<span style="color: red; font-style: italic"> VERSION 11 </span>');
+  res.send("RNDK24 TEST SERVER ::::::: " + ++count +  '<span style="color: green; font-style: italic">GREEN VERSION 1</span>');
 });
 
 
