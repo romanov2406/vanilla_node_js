@@ -7,7 +7,7 @@ app.get("/", async (req, res) => {
   res.send(
     "RNDK24 TEST SERVER ::::::: " +
       ++count +
-      '<span style="color: red; font-style: italic"> PINK VERSION 2</span>'
+      '<span style="color: red; font-style: italic"> PINK VERSION 3</span>'
   );
 });
 
