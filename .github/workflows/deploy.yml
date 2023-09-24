@@ -25,6 +25,5 @@ jobs:
           aws deploy create-deployment \
           --application-name vanilla-deployment-app \
           --deployment-group-name vanilla-deployment-group \
-          --include-only-statuses Failed
           --deployment-config-name CodeDeployDefault.AllAtOnce \
           --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
