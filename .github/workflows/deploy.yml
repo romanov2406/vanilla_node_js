@@ -23,7 +23,7 @@ jobs:
         id: deploy
         run: |
           aws deploy create-deployment \
-          --application-name nodejs-deploy-app \
-          --deployment-group-name nodejs-deploy-group \
-          --deployment-config-name CodeDeployDefault.OneAtATime \
+          --application-name vanilla-deployment-app \
+          --deployment-group-name vanilla-deployment-group \
+          --deployment-config-name CodeDeployDefault.AllAtOnce \
           --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
