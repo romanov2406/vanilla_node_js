@@ -12,7 +12,6 @@ sudo chmod -R 777 /var/www/vanilla_node_js
 cd /var/www/vanilla_node_js
 
 # add npm and node to path
-
 # source ~/.nvm/nvm.sh
 
 npm install
