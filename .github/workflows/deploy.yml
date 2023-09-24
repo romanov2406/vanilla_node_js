@@ -10,6 +10,21 @@ jobs:
       - name: Checkout to repo
         uses: actions/checkout@v2
 
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v2
+#        with:
+#          node-version: 14
+#
+#      - name: Install Angular CLI and dependencies
+#        run: |
+#          npm install -g @angular/cli
+#          npm install
+#
+#      - name: Build Angular application
+#        run: |
+#          ng build --prod
+
+
         # Step 2
       - name: Set AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -19,11 +34,18 @@ jobs:
           aws-region: eu-west-2
 
         # Step 3
+      - name: Upload build artifact to S3
+        run: |
+          aws s3 cp dist s3://<your-s3-bucket-name>/ --recursive
+
+       # Step 4
       - name: Create CodeDeploy Deployment
         id: deploy
         run: |
-          aws deploy create-deployment \
-          --application-name nodejs-codeDeploy-app \
-          --deployment-group-name nodejs-codeDeploy-group \
-          --deployment-config-name CodeDeployDefault.OneAtATime \
-          --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
+          ssh ec2-user@18.168.205.237
+          ls
+#          aws deploy create-deployment \
+#          --application-name nodejs-codeDeploy-app \
+#          --deployment-group-name nodejs-codeDeploy-group \
+#          --deployment-config-name CodeDeployDefault.OneAtATime \
+#          --github-location repository=${{ github.repository }},commitId=${{ github.sha }}
