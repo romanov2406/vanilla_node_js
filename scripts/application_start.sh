@@ -1,4 +1,4 @@
 
 cd /var/www/vanilla_node_js
-#npm i
+npm i
 #forever restartall
