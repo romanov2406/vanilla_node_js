@@ -5,5 +5,4 @@
 #echo 'forever restartall' >> /var/www/vanilla_node_js/deploy.log
 cd /var/www/vanilla_node_js
 npm i
-forever stopall
-forever start main.js
+forever restartall
