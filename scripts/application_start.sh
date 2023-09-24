@@ -1,18 +1,18 @@
+
 #!/bin/bash
 
-# Debugging: Print the current PATH
-echo "Current PATH: $PATH"
+sudo chmod -R 777 /var/www/vanilla_node_js
 
-# Navigate to your application directory.
 cd /var/www/vanilla_node_js
 
-# Specify the full path to the 'forever' command.
-/usr/local/bin/forever start main.js
+# add npm and node to path
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # loads nvm bash_completion (node is in path now)
 
-# Check if the application started successfully.
-if [ $? -eq 0 ]; then
-   echo "Node.js application started successfully."
-else
-   echo "Error: Failed to start Node.js application."
-   exit 1
-fi
+# source ~/.nvm/nvm.sh
+
+npm install
+
+forever stopall
+forever start index.js
