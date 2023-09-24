@@ -1,4 +1,4 @@
-sudo chmod -R 777 /var/www/vanilla_node_js
 cd /var/www/vanilla_node_js
-sudo npm install
-sudo forever restartall
+
+# Start your Node.js application using the full path to forever.
+/usr/local/bin/forever restartall
